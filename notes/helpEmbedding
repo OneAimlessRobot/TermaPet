@@ -1,0 +1,12 @@
+ld -r -b binary -o some_file.o some_file.jpg //embutir ficheiros.
+objdump -t some_file.o. //consultar simbolos
+
+
+https://linux.die.net/man/3/intrflush // teclas paralelas
+
+https://stackoverflow.com/questions/64866790/ncurses-handle-keyboard-inputs-in-the-terminal-in-c //Teclas paralelas
+
+https://stackoverflow.com/questions/6835912/fill-an-ncurses-window-with-a-color //Colored windows
+
+
+https://tldp.org/HOWTO/NCURSES-Programming-HOWTO/menus.html // work with menus
