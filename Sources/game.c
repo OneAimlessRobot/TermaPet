@@ -480,8 +480,9 @@ void displayHud(Game * game){
 
 }
 
-void flashingDyingAlert(Game* game){
+void* flashingDyingAlert(void* args){
 
+ Game* game= (Game*)args;
     while(!game->an->dead){
         if(game->an->dying){
 
@@ -492,7 +493,7 @@ void flashingDyingAlert(Game* game){
 
     }
 
-
+return NULL;
 
 }
 void clearAll(Game* game){
@@ -639,8 +640,9 @@ void killAllBuffs(Game*game){
 
 }
 
-void petLoop(Game*game){
+void* petLoop(void* args){
 
+Game* game= (Game*)args;
 while(1){
     if(!(game->paused)){
         petDecayLoop(game->an);
@@ -648,6 +650,6 @@ while(1){
     }
 
 
-
+return NULL;
 
 }

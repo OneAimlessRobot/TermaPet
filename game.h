@@ -20,7 +20,7 @@ void initMenus(Game*game);
 
 void gameLoop(Game* game);
 
-void petLoop(Game*game);
+void* petLoop(void* args);
 
 void destroyGame(Game*game);
 void updateGraphics(Game* game);
@@ -38,7 +38,7 @@ void goHomeFunc(Game*game,int option);
 void postCurrMenu(Game*game);
 
 void input(Game*game);
-void flashingDyingAlert(Game* game);
+void* flashingDyingAlert(void* args);
 
 
 void killAllBuffs(Game*game);

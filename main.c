@@ -48,9 +48,9 @@ initAllColors();
 
 showTitleScreen(game.needs[0],game.buffs[2],0,0);
 
- pthread_create(&game.biology,NULL,petLoop,(&game));
+ pthread_create(&game.biology,NULL,petLoop,(void*)(&game));
  pthread_detach(game.biology);
- pthread_create(&game.alert,NULL,flashingDyingAlert,&(game));
+ pthread_create(&game.alert,NULL,flashingDyingAlert,(void*)(&game));
  pthread_detach(game.alert);
 
     gameLoop(&game);
