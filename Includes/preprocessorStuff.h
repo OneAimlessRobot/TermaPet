@@ -9,6 +9,7 @@ enum modes{home,commands,stats,pet,activities};
 #include <stdio.h>
 #include <pthread.h>
 #include <string.h>
+#include <signal.h>
 #include <unistd.h>
 #include <menu.h>
 #include "embeded.h"

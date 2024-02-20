@@ -1,5 +1,16 @@
 #include "Includes/preprocessorStuff.h"
+static Game game;
 
+
+void sigint_handler(int signal){
+	game.an->dead=1;
+	pthread_join(game.biology,NULL);
+ 	pthread_join(game.alert,NULL);
+	destroyGame(&game);
+	
+	exit(-1);
+
+}
 int main(int argc, char** argv){
 
 char* name=malloc(1024);
@@ -19,7 +30,6 @@ else{
 
 }
 
-Game game;
 game.an=malloc(sizeof(Animal));
 
 game.mode=0;
@@ -49,9 +59,9 @@ initAllColors();
 showTitleScreen(game.needs[0],game.buffs[2],0,0);
 
  pthread_create(&game.biology,NULL,petLoop,(void*)(&game));
- pthread_detach(game.biology);
  pthread_create(&game.alert,NULL,flashingDyingAlert,(void*)(&game));
- pthread_detach(game.alert);
+
+signal(SIGINT,sigint_handler);
 
     gameLoop(&game);
 

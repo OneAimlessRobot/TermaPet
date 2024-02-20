@@ -643,7 +643,7 @@ void killAllBuffs(Game*game){
 void* petLoop(void* args){
 
 Game* game= (Game*)args;
-while(1){
+while(!game->an->dead){
     if(!(game->paused)){
         petDecayLoop(game->an);
         }
