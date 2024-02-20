@@ -61,14 +61,14 @@ ITEM** cmdItems = (ITEM **)calloc(nCmd + 1, sizeof(ITEM *)),
         **goHomeItems = (ITEM **)calloc(nGoHome + 1, sizeof(ITEM *));
 
 
-    initMenu(&game->pMenus[0],&game->menus[0],nHome,game->needs[2],homeFunc,homeLabels,homeItems);
+    initMenu(&game->pMenus[0],&game->menus[0],nHome,&game->needs[2],homeFunc,homeLabels,homeItems);
 
-    initMenu(&game->pMenus[1],&game->menus[1],nCmd,game->needs[2],cmdFunc,cmdLabels,cmdItems);
+    initMenu(&game->pMenus[1],&game->menus[1],nCmd,&game->needs[2],cmdFunc,cmdLabels,cmdItems);
 
-    initMenu(&game->pMenus[2],&game->menus[2],nGoHome,game->needs[13],goHomeFunc,goHomeLabels,goHomeItems);
+    initMenu(&game->pMenus[2],&game->menus[2],nGoHome,&game->needs[13],goHomeFunc,goHomeLabels,goHomeItems);
 
 
-    initMenu(&game->pMenus[3],&game->menus[3],nGoHome,game->needs[13],goHomeFunc,goHomeLabels,goHomeItems);
+    initMenu(&game->pMenus[3],&game->menus[3],nGoHome,&game->needs[13],goHomeFunc,goHomeLabels,goHomeItems);
 
 
 

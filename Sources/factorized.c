@@ -1,5 +1,6 @@
 #include <ncurses.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include <string.h>
 #include <menu.h>
 #include "../Includes/auxFuncs.h"
@@ -40,10 +41,10 @@ items[nRows] = (ITEM *)NULL;
 
 menu_opts_off(*menu, O_SHOWDESC);
 
-keypad(win, TRUE);
+keypad(*win, TRUE);
 
-set_menu_win(*menu,win);
-set_menu_sub(*menu, derwin(win, SUBMENUH, SUBMENUW, SUBMENUX, SUBMENUY));
+set_menu_win(*menu,*win);
+set_menu_sub(*menu, derwin(*win, SUBMENUH, SUBMENUW, SUBMENUX, SUBMENUY));
 
 set_menu_mark(*menu,"");
 
