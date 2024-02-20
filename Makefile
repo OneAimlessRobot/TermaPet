@@ -1,7 +1,7 @@
 LDLIBS= -lmenu -lncurses -lpthread -lm
 
 INCLUDE= ./Includes .
-BINARY=TermaPet
+BINARY=TermaPet.exe
 SOURCES= . ./Sources
 RESDIR= ./resources
 
